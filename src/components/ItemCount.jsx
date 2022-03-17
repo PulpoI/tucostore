@@ -23,7 +23,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
       <IconButton onClick={countDown} aria-label="delete" color="primary">
         <RemoveCircleIcon />
       </IconButton>
-      <div>CANTIDAD: {count}</div>
+      Cantidad: {count}
       <IconButton onClick={countUp} aria-label="add" color="primary">
         <AddCircleIcon />
       </IconButton>
