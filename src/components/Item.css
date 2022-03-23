@@ -1,3 +1,7 @@
 .ImgCard:hover {
     object-fit: none;
   }
+
+  .Card {
+    text-decoration: none;
+  }

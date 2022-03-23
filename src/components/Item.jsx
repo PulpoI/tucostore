@@ -4,25 +4,28 @@ import "./Item.css";
 
 import React from "react";
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 const Item = ({ producto }) => {
   const precioRemeras = 1800;
 
   return (
-    <Card style={{ width: "17rem" }}>
-      <Card.Img className="ImgCard" variant="top" src={producto.img} />
-      <Card.Body>
-        <Card.Title as={"h6"}>{producto.title}</Card.Title>
-        <Card.Text>
-          Categoria: {producto.categoria}
+    <Link className="Card" to={`/detail/${producto.id}`}>
+      <Card style={{ width: "17rem" }}>
+        <Card.Img className="ImgCard" variant="top" src={producto.img} />
+        <Card.Body>
+          <Card.Title as={"h6"}>{producto.title}</Card.Title>
+          <Card.Text>
+            Categoria: {producto.categoria}
+            <br />
+            Precio: ${precioRemeras}
+          </Card.Text>
           <br />
-          Precio: ${precioRemeras}
-        </Card.Text>
-        <br />
-        <ItemCount stock={5} initial={1} />
-        <Button variant="secondary">Agregar al carrito</Button>
-      </Card.Body>
-    </Card>
+          <ItemCount stock={5} initial={1} />
+          <Button variant="secondary">Ver detalles</Button>
+        </Card.Body>
+      </Card>
+    </Link>
   );
 };
 

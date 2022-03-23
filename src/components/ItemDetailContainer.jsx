@@ -1,24 +1,28 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
-function ItemDetailContainer({ categoria, id }) {
-  const [item, setItem] = useState([]);
+function ItemDetailContainer() {
+  const { itemId } = useParams();
+  const [producto, setProducto] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  function getRandomArbitrary(min, max) {
-    return Math.trunc(Math.random() * (max - min) + min);
-  }
-
   useEffect(() => {
-    axios(`http://localhost:5000/memes/${getRandomArbitrary(1, 108)}`).then(
-      (res) => setItem(res.data)
+    const obtenerProductos = axios(`http://localhost:5000/remeras`).then(
+      (res) => res
     );
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
-  }, [categoria, id]);
-  return <div>{isLoading ? "Cargando..." : <ItemDetail item={item} />}</div>;
+    }, 1000);
+    obtenerProductos.then((res) => {
+      setProducto(res.data.find((e) => e.id == itemId));
+    });
+  }, []);
+
+  return (
+    <div>{isLoading ? "Cargando..." : <ItemDetail item={producto} />}</div>
+  );
 }
 
 export default ItemDetailContainer;
