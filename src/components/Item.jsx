@@ -21,7 +21,7 @@ const Item = ({ producto }) => {
             Precio: ${precioRemeras}
           </Card.Text>
           <br />
-          <ItemCount stock={5} initial={1} />
+          <ItemCount stock={5} />
           <Button variant="secondary">Ver detalles</Button>
         </Card.Body>
       </Card>
