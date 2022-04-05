@@ -1,12 +1,16 @@
 import { Button } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ItemCount from "./ItemCount";
 import "./ItemDetail.css";
+import { CartContext } from "./context/CartContext";
 
 const ItemDetail = ({ item }) => {
   const [count, setCount] = useState(1);
+  const [goToCart, setGoToCart] = useState(false);
+
+  const { addToCart } = useContext(CartContext);
 
   const handleAgregar = () => {
     const itemToCart = {
