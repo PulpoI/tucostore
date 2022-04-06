@@ -5,15 +5,17 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import { Button } from "@mui/material";
 
-export default function ItemCount({ stock, count, setCount, handleAgregar }) {
+export default function ItemCount({ initial, stock, onAdd }) {
+  const [value, setValue] = useState(initial);
+
   const countUp = () => {
-    if (count < stock) {
-      setCount(count + 1);
+    if (value < stock) {
+      setValue(value + 1);
     }
   };
   const countDown = () => {
-    if (count > 0) {
-      setCount(count - 1);
+    if (value > initial) {
+      setValue(value - 1);
     }
   };
 
@@ -22,11 +24,11 @@ export default function ItemCount({ stock, count, setCount, handleAgregar }) {
       <IconButton onClick={countDown} aria-label="delete" color="primary">
         <RemoveCircleIcon />
       </IconButton>
-      Cantidad: {count}
+      Cantidad: {value}
       <IconButton onClick={countUp} aria-label="add" color="primary">
         <AddCircleIcon />
       </IconButton>
-      <Button variant="primary" onClick={handleAgregar}>
+      <Button variant="primary" onClick={() => onAdd(value)}>
         Agregar al carrito
       </Button>
     </>
