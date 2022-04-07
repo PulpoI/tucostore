@@ -7,8 +7,6 @@ import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 
 const Item = ({ producto }) => {
-  const precioRemeras = 1800;
-
   return (
     <Link className="Card" to={`/detail/${producto.id}`}>
       <Card style={{ width: "17rem" }}>
@@ -18,7 +16,7 @@ const Item = ({ producto }) => {
           <Card.Text>
             Categoria: {producto.categoria}
             <br />
-            Precio: ${precioRemeras}
+            Precio: ${producto.price}
           </Card.Text>
           <br />
           <ItemCount stock={5} />

@@ -2,6 +2,7 @@ import { Container, Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
 
 import React from "react";
 import { Link } from "react-router-dom";
+import CartWidget from "./CartWidget";
 
 const NavBar = () => {
   return (
@@ -41,8 +42,12 @@ const NavBar = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+
           <Nav>
-            <Nav.Link href="#deets">Login</Nav.Link>
+            <Link to="/cart">
+              <CartWidget />
+            </Link>
+            {/* <Nav.Link href="#deets">Login</Nav.Link> */}
             {/* <Nav.Link eventKey={2} href="#memes">
               Dank memes
             </Nav.Link> */}
