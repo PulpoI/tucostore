@@ -23,12 +23,18 @@ const NavBar = () => {
               <NavDropdown.Item>
                 <Link to="remeras/series">Series</Link>
               </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to="remeras/musica">Musica</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to="remeras/trasher">Trasher</Link>
+              </NavDropdown.Item>
             </NavDropdown>
 
             <NavLink></NavLink>
             <NavDropdown title="Otros" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">
-                <Link to="/nosotros">Nosotros</Link>
+                <Link to="/firebase">Nosotros</Link>
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Otros productos

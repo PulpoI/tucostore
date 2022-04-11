@@ -11,6 +11,7 @@ import ItemList from "./components/ItemList";
 import CartContextProvider from "./components/context/CartContext";
 import Cart from "./components/Cart";
 import "bootstrap/dist/css/bootstrap.min.css";
+import FirebaseComponent from "./components/FirebaseComponent";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           />
           <Route exact path="cart" element={<Cart />} />
           <Route exact path="*" element={<Error404 />} />
+          <Route path="/firebase" element={<FirebaseComponent />}></Route>
         </Routes>
       </BrowserRouter>
     </CartContextProvider>

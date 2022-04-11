@@ -2,6 +2,30 @@
     object-fit: none;
   }
 
+  
+.ImgCard{
+  object-fit: scale-down
+
+  } 
   .Card {
     text-decoration: none;
+  }
+  a:-webkit-any-link {
+    color: black;
+  }
+
+  a:hover {
+    color: rgb(102, 78, 19);
+  }
+
+  .card-body {
+    padding: 0.3rem 0.3rem !important;
+    background-color: rgba(255, 255, 0, 0.158);
+  }
+
+  .card-title{
+    font-size: 0.8rem;
+    height:30px;
+    margin-bottom: 2.5rem;
+    background-color: rgba(219, 219, 219, 0.158);
   }

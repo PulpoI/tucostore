@@ -20,11 +20,12 @@ const ItemDetail = ({ item }) => {
 
   return (
     <div className="CardDetail">
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "23rem" }}>
+        <Card.Title>{item.title}</Card.Title>
         <Card.Img variant="top" src={item.img} />
+        <Card.Img className="ImgCardDetail" variant="top" src={item.img} />
         <Card.Body>
-          <Card.Title>{item.title}</Card.Title>
-          <Card.Text>Categoria: {item.categoria}</Card.Text>
+          <Card.Text>Categoria: {item.category}</Card.Text>
         </Card.Body>
 
         {!goToCart ? (
@@ -34,7 +35,7 @@ const ItemDetail = ({ item }) => {
             <Link to={`/cart`}>
               <Button variant="primary">Ir al carrito</Button>
             </Link>
-            <Link to={`/`}>
+            <Link to={`/remeras/${item.category}`}>
               <Button variant="primary">Seguir comprando</Button>
             </Link>
           </div>
