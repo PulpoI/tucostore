@@ -20,10 +20,21 @@ const CartList = () => {
         {cartList.map((prod) => (
           <div className="row align-items-center" key={prod.id}>
             <div className="col-lg-3 col-sm-3">
-              <img src={prod.img} alt={prod.title} style={{ width: 150 }}></img>
+              <Link to={`/detail/${prod.id}`}>
+                <img
+                  src={prod.img}
+                  alt={prod.title}
+                  style={{ width: 150 }}
+                ></img>
+              </Link>
             </div>
             <div className="col-lg-3 col-sm-3">
-              <h5>{prod.title}</h5>
+              <Link to={`/detail/${prod.id}`}>
+                <h5>
+                  {prod.product.charAt(0).toUpperCase()}
+                  {prod.product.slice(1)}: {prod.title}
+                </h5>
+              </Link>
             </div>
             <div className="col-lg-2 col-sm-2">
               <h5>${prod.price}</h5>

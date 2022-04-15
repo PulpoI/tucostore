@@ -12,6 +12,7 @@ import CartContextProvider from "./components/context/CartContext";
 import Cart from "./components/Cart";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FirebaseComponent from "./components/FirebaseComponent";
+import FormBuyer from "./components/FormBuyer";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             element={<ItemDetailContainer />}
           />
           <Route exact path="cart" element={<Cart />} />
+          <Route exact path="checkout" element={<FormBuyer />}></Route>
           <Route exact path="*" element={<Error404 />} />
           <Route path="/firebase" element={<FirebaseComponent />}></Route>
         </Routes>

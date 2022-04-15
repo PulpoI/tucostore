@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Item = ({ producto }) => {
   const titulo = producto.title.toUpperCase().split(" ");
-  console.log(titulo);
+
   return (
     <Link className="Card text-center" to={`/detail/${producto.id}`}>
       <Card style={{ width: "17rem" }}>
