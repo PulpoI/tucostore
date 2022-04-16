@@ -4,7 +4,7 @@ export const CartContext = createContext([]);
 
 const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
-  const nameUser = "pepe";
+
   function addToCart(item) {
     const index = cartList.findIndex((i) => i.id === item.id);
 
@@ -25,6 +25,11 @@ const CartContextProvider = ({ children }) => {
     setCartList(filteredCart);
   };
 
+  // const sumItem = () => {
+  //   const sum = cartList[0].quantity + 1;
+  //   setCartList(sum);
+  // };
+
   function emptyCart() {
     setCartList([]);
   }
@@ -41,6 +46,13 @@ const CartContextProvider = ({ children }) => {
     );
   };
 
+  const upperStart = (e) => {
+    const upper = e.charAt(0).toUpperCase();
+    console.log(upper);
+    upper.slice(1);
+    console.log(upper);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -50,7 +62,7 @@ const CartContextProvider = ({ children }) => {
         emptyCart,
         cartCounter,
         totalBuy,
-        nameUser,
+        upperStart,
       }}
     >
       {children}

@@ -11,7 +11,7 @@ const ItemDetail = ({ item }) => {
   const [goToCart, setGoToCart] = useState(false);
 
   // const [count, setCount] = useState(1);
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, upperStart } = useContext(CartContext);
 
   const onAdd = (quantity) => {
     setGoToCart(true);
@@ -25,7 +25,10 @@ const ItemDetail = ({ item }) => {
         <Card.Img variant="top" src={item.img} />
         <Card.Img className="ImgCardDetail" variant="top" src={item.img} />
         <Card.Body>
-          <Card.Text>Categoria: {item.category}</Card.Text>
+          <Card.Text>
+            Categoria:{" "}
+            <Link to={`/remeras/${item.category}`}>{item.category}</Link>{" "}
+          </Card.Text>
         </Card.Body>
 
         {!goToCart ? (
