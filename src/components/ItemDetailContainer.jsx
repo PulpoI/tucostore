@@ -4,22 +4,12 @@ import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../utils/firebase";
+import Loader from "./Loader";
 
 function ItemDetailContainer() {
   const { itemId } = useParams();
   const [producto, setProducto] = useState([]);
-
-  // useEffect(() => {
-  //   const obtenerProductos = axios(`http://localhost:5000/remeras`).then(
-  //     (res) => res
-  //   );
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 1000);
-  //   obtenerProductos.then((res) => {
-  //     setProducto(res.data.find((e) => e.id == itemId));
-  //   });
-  // }, []);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getData = async () => {
@@ -30,15 +20,22 @@ function ItemDetailContainer() {
         return { id: doc.id, ...doc.data() };
       });
       setProducto(dataItems.find((e) => e.id == itemId));
+      setLoading(false);
     };
     getData();
-  }, []);
+  }, [itemId]);
 
   return (
-    <div>
-      {" "}
-      <ItemDetail item={producto} />
-    </div>
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div>
+          {" "}
+          <ItemDetail item={producto} />
+        </div>
+      )}
+    </>
   );
 }
 

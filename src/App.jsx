@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nosotros from "./components/Nosotros";
 import Error404 from "./components/Error404";
 import Inicio from "./components/Inicio";
-import ItemList from "./components/ItemList";
 import CartContextProvider from "./components/context/CartContext";
 import Cart from "./components/Cart";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -27,6 +26,7 @@ function App() {
             path="/remeras/:categoria"
             element={<ItemListContainer />}
           />
+
           <Route exact path="/nosotros" element={<Nosotros />} />
           <Route
             exact

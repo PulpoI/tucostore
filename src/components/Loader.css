@@ -1,0 +1,11 @@
+.loader {
+    background-image: url("./../assets/cat.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    bottom: 200px;
+    height: 500px;
+    margin-top: 50px;
+
+}
+

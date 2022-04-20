@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 const CartList = () => {
-  const { cartList, totalBuy, removeItem, emptyCart, sumItem } =
-    useContext(CartContext);
+  const { cartList, totalBuy, removeItem, emptyCart } = useContext(CartContext);
 
   return (
     <div className="container">

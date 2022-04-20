@@ -25,17 +25,14 @@ const CartContextProvider = ({ children }) => {
     setCartList(filteredCart);
   };
 
-  // const sumItem = () => {
-  //   const sum = cartList[0].quantity + 1;
-  //   setCartList(sum);
-  // };
-
   function emptyCart() {
     setCartList([]);
+    limpiarLs();
   }
 
   // Contador carrito
   const cartCounter = () => {
+    addLocalStorage();
     return cartList.reduce((prev, prod) => prev + prod.quantity, 0);
   };
   // Subtotal compra
@@ -52,6 +49,23 @@ const CartContextProvider = ({ children }) => {
     upper.slice(1);
     console.log(upper);
   };
+
+  //Guardando el carrito en el LS
+  function addLocalStorage() {
+    localStorage.setItem("carrito", JSON.stringify(cartList));
+  }
+
+  window.onload = function () {
+    const cartList = JSON.parse(localStorage.getItem("carrito"));
+    if (cartList) {
+      setCartList(cartList);
+    }
+  };
+
+  function limpiarLs() {
+    addLocalStorage(cartList);
+    localStorage.clear();
+  }
 
   return (
     <CartContext.Provider

@@ -1,39 +1,19 @@
 import React, { useEffect, useState } from "react";
-import ItemCount from "./ItemCount";
-import { Button } from "@mui/material";
 import ItemList from "./ItemList";
-import axios from "axios";
 import { useParams } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../utils/firebase";
+import Loader from "./Loader";
 
 const ItemListContainer = () => {
   const { categoria } = useParams();
   const [productos, setProductos] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  // useEffect(() => {
-  //   const obtenerProductos = axios(`http://localhost:5000/remeras`).then(
-  //     (res) => res
-  //   );
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 1000);
-  //   if (!categoria) {
-  //     obtenerProductos.then((res) => setProductos(res.data));
-  //   } else {
-  //     obtenerProductos.then((res) => {
-  //       setProductos(
-  //         res.data.filter((productos) => productos.categoria === categoria)
-  //       );
-  //     });
-  //   }
-  // }, [categoria]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getData = async () => {
       const query = collection(db, "items");
-      const response = await getDocs(query);
+      const response = await getDocs(query).finally(() => setLoading(false));
 
       const dataItems = response.docs.map((doc) => {
         return { id: doc.id, ...doc.data() };
@@ -45,11 +25,7 @@ const ItemListContainer = () => {
     getData();
   }, [categoria]);
 
-  return (
-    <>
-      <ItemList productos={productos} />
-    </>
-  );
+  return <>{loading ? <Loader /> : <ItemList productos={productos} />}</>;
 };
 
 export default ItemListContainer;

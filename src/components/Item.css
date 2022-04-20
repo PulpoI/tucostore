@@ -1,12 +1,16 @@
 .ImgCard:hover {
-    object-fit: none;
+   /* object-fit: none; */
+  transform: scale(2.8);
+  padding-top: 40px;
+  }
+.ImgCard{
+  object-fit: cover;
+  transition: 0.5s;
+}
+  .card {
+    overflow: hidden;
   }
 
-  
-.ImgCard{
-  object-fit: scale-down
-
-  } 
   .Card {
     text-decoration: none;
   }
@@ -28,4 +32,10 @@
     height:30px;
     margin-bottom: 2.5rem;
     background-color: rgba(219, 219, 219, 0.158);
+  }
+
+  .card-img, .card-img-bottom, .card-img-top {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
   }
