@@ -1,9 +1,6 @@
 import { useState } from "react";
-import IconButton from "@mui/material/IconButton";
-
-import AddCircleIcon from "@mui/icons-material/AddCircle";
-import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
-import { Button } from "@mui/material";
+import { BsArrowDownCircle, BsArrowUpCircle } from "react-icons/bs";
+import { Button } from "react-bootstrap";
 
 export default function ItemCount({ initial, stock, onAdd }) {
   const [value, setValue] = useState(initial);
@@ -21,16 +18,29 @@ export default function ItemCount({ initial, stock, onAdd }) {
 
   return (
     <>
-      <IconButton onClick={countDown} aria-label="delete" color="primary">
-        <RemoveCircleIcon />
-      </IconButton>
-      Cantidad: {value}
-      <IconButton onClick={countUp} aria-label="add" color="primary">
-        <AddCircleIcon />
-      </IconButton>
-      <Button variant="primary" onClick={() => onAdd(value)}>
-        Agregar al carrito
-      </Button>
+      <div className="container justify-content-center align-items-baseline d-flex">
+        <Button
+          onClick={countDown}
+          aria-label="delete"
+          className="btn btn-warning bg-gradient mt-2 m-2"
+        >
+          <BsArrowDownCircle />
+        </Button>
+        <h5>Cantidad: {value}</h5>
+        <Button
+          className="btn btn-warning bg-gradient mt-2 m-2"
+          onClick={countUp}
+          aria-label="add"
+        >
+          <BsArrowUpCircle />
+        </Button>
+        <Button
+          className="btn btn-warning bg-gradient mt-2"
+          onClick={() => onAdd(value)}
+        >
+          Agregar al carrito
+        </Button>
+      </div>
     </>
   );
 }

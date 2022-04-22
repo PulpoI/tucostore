@@ -1,7 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "./context/CartContext";
 import { Link } from "react-router-dom";
-import ItemCount from "./ItemCount";
 
 const CartList = () => {
   const { cartList, totalBuy, removeItem, emptyCart } = useContext(CartContext);
@@ -48,7 +47,7 @@ const CartList = () => {
             </div>
             <div className="col-lg-1 col-sm-1">
               <button
-                className="btn btn-danger bg-gradient"
+                className="btn btn-warning bg-gradient"
                 onClick={() => removeItem(prod.id)}
               >
                 Eliminar{" "}
@@ -65,13 +64,13 @@ const CartList = () => {
         </h4>
         <div className="d-flex justify-content-center mt-5">
           <button
-            className="btn btn-danger bg-gradient me-3"
+            className="btn btn-warning bg-gradient me-3"
             onClick={emptyCart}
           >
             Vaciar Carrito
           </button>
           <Link to="/checkout">
-            <button className="btn btn-danger bg-gradient ms-3">
+            <button className="btn btn-warning bg-gradient ms-3">
               Procesar Compra
             </button>
           </Link>

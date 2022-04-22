@@ -1,12 +1,13 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Error404 = () => {
   return (
-    <div>
-      Error404
+    <div className="container d-flex flex-column align-items-center mt-5">
+      <h2>NO SE ENCONTRO LA PAGINA :( </h2>
       <Link to="/">
-        <button>Ir a inicio</button>
+        <Button variant="warning">Ir a inicio</Button>
       </Link>
     </div>
   );

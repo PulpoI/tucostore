@@ -1,13 +1,7 @@
-import {
-  getFirestore,
-  addDoc,
-  collection,
-  Timestamp,
-} from "firebase/firestore";
+import { addDoc, collection, Timestamp } from "firebase/firestore";
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../utils/firebase";
-import CartList from "./CartList";
 import { CartContext } from "./context/CartContext";
 import Loader from "./Loader";
 
@@ -42,7 +36,6 @@ const FormBuyer = () => {
       items: cartList,
       total: totalBuy(),
     };
-    console.log(newOrder);
 
     // referencia de la collecion
 
@@ -73,54 +66,80 @@ const FormBuyer = () => {
             <h4 className="my-5">La compra se ha realizado exitosamente.</h4>
             <strong>El ID de tu compra es {orderId}</strong>
             <br />
-            <Link className="btn btn-danger bg-gradient mt-5" to={`/`}>
+            <Link className="btn btn-warning bg-gradient mt-5" to={`/`}>
               <strong>Volver al inicio</strong>
             </Link>
           </div>
         </div>
       ) : (
         <>
-          <form onSubmit={sendOrder} onChange={handleChange}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Nombre"
-              defaultValue={formData.name}
-              required
-            />
-            <input
-              type="phone"
-              name="phone"
-              placeholder="Telefono"
-              defaultValue={formData.phone}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              defaultValue={formData.email}
-              required
-            />
-            <input
-              type="email"
-              name="emailConfirm"
-              placeholder="Confirmar Email"
-              defaultValue={formData.emailConfirm}
-              required
-            />
-            <button
-              disabled={
-                !formData.name ||
-                !formData.phone ||
-                !formData.email ||
-                formData.email !== formData.emailConfirm ||
-                cartList.length == 0
-              }
-            >
-              Realizar compra
-            </button>
-          </form>
+          <div className="container mt-5 form__container d-flex">
+            <div className="container align-self-center position-relative">
+              <div className="row">
+                <div className="col-12">
+                  <form
+                    className="d-flex flex-column"
+                    onSubmit={sendOrder}
+                    onChange={handleChange}
+                  >
+                    <div className="mb-3 d-flex flex-column align-items-center">
+                      <label className="form-label">Nombre</label>
+                      <input
+                        type="name"
+                        className="form-control form-control--color"
+                        name="name"
+                        defaultValue={formData.name}
+                        required
+                      />
+                    </div>
+                    <div className="mb-3 d-flex flex-column align-items-center">
+                      <label className="form-label">Teléfono</label>
+                      <input
+                        type="number"
+                        onkeydown="return event.keyCode !== 69"
+                        className="form-control form-control--color"
+                        name="phone"
+                        defaultValue={formData.phone}
+                        required
+                      />
+                    </div>
+                    <div className="mb-3 d-flex flex-column align-items-center">
+                      <label className="form-label">Email</label>
+                      <input
+                        type="email"
+                        className="form-control form-control--color"
+                        name="email"
+                        defaultValue={formData.email}
+                        required
+                      />
+                    </div>
+                    <div className="mb-3 d-flex flex-column align-items-center">
+                      <label className="form-label">Confirmar Email</label>
+                      <input
+                        type="email"
+                        className="form-control form-control--color"
+                        name="emailConfirm"
+                        defaultValue={formData.emailConfirm}
+                        required
+                      />
+                    </div>
+                    <button
+                      className="btn btn-warning bg-gradient d-flex justify-content-center w-50 align-self-center"
+                      disabled={
+                        !formData.name ||
+                        !formData.phone ||
+                        !formData.email ||
+                        formData.email !== formData.emailConfirm ||
+                        cartList.length === 0
+                      }
+                    >
+                      Comprar
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </>
       )}
     </>

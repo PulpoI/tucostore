@@ -1,10 +1,7 @@
-import { Button } from "react-bootstrap";
 import { Card } from "react-bootstrap";
-import "./Item.css";
-
 import React from "react";
-import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import "./Item.css";
 
 const Item = ({ producto }) => {
   const titulo = producto.title.toUpperCase().split(" ");

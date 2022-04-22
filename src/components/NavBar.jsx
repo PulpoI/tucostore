@@ -1,72 +1,5 @@
-// import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-
-// import React from "react";
-// import { Link, NavLink } from "react-router-dom";
-// import CartWidget from "./CartWidget";
-
-// const NavBar = () => {
-//   return (
-//     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-//       <Container>
-//         <Navbar.Brand>
-//           {" "}
-//           <NavLink exact="true" to="/">
-//             Tuco Store
-//           </NavLink>
-//         </Navbar.Brand>
-
-//         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-//         <Navbar.Collapse id="responsive-navbar-nav">
-//           <Nav className="me-auto">
-//             <NavDropdown title="Remeras" id="collasible-nav-dropdown">
-//               <NavDropdown.Item>
-//                 <NavLink exact="true" to="/remeras/memes">
-//                   Memes{" "}
-//                 </NavLink>
-//               </NavDropdown.Item>
-//               <NavDropdown.Item>
-//                 <Link to="/remeras/series">Series</Link>
-//               </NavDropdown.Item>
-//               <NavDropdown.Item>
-//                 <NavLink exact="true" to="/remeras/musica">
-//                   Musica
-//                 </NavLink>
-//               </NavDropdown.Item>
-//               <NavDropdown.Item>
-//                 <NavLink exact="true" to="/remeras/trasher">
-//                   Trasher
-//                 </NavLink>
-//               </NavDropdown.Item>
-//             </NavDropdown>
-
-//             <NavDropdown title="Otros" id="collasible-nav-dropdown">
-//               <NavDropdown.Item>
-//                 <NavLink exact="true" to="/firebase">
-//                   Nosotros
-//                 </NavLink>
-//               </NavDropdown.Item>
-//               <NavDropdown.Item>Otros productos</NavDropdown.Item>
-//               <NavDropdown.Item>Trae tu prenda</NavDropdown.Item>
-//               <NavDropdown.Divider />
-//               <NavDropdown.Item>Contactanos</NavDropdown.Item>
-//             </NavDropdown>
-//           </Nav>
-
-//           <Nav>
-//             <Link to="/cart">
-//               <CartWidget />
-//             </Link>
-//           </Nav>
-//         </Navbar.Collapse>
-//       </Container>
-//     </Navbar>
-//   );
-// };
-
-// export default NavBar;
-
 import { Link } from "react-router-dom";
-
+import logo from "../assets/logoD.png";
 import CartWidget from "../components/CartWidget";
 
 const NavBar = () => {
@@ -75,7 +8,7 @@ const NavBar = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <Link to="/" className="navbar-brand">
-            Navbar
+            <img src={logo} alt="" style={{ width: "7rem" }} />
           </Link>
           <button
             className="navbar-toggler"
@@ -136,17 +69,6 @@ const NavBar = () => {
             <Link to="/cart">
               <CartWidget />{" "}
             </Link>
-            {/* <form className="d-flex">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Buscar Diseño"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline" type="submit">
-                Buscar
-              </button>
-            </form> */}
           </div>
         </div>
       </nav>

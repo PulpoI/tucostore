@@ -1,9 +1,5 @@
-.CardDetail {
+.ItemDetail {
     display: flex;
     flex-direction: column;
    align-items: center;
 }
-
-.ImgCardDetail{
-    object-fit: none;
-  }

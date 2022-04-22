@@ -11,7 +11,7 @@ const CartWidget = () => {
       {cartList.length === 0 ? (
         <span></span>
       ) : (
-        <Badge pill bg="danger">
+        <Badge pill text="dark" bg="warning">
           {cartCounter()}
         </Badge>
       )}

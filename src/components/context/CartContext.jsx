@@ -22,7 +22,11 @@ const CartContextProvider = ({ children }) => {
 
   const removeItem = (id) => {
     const filteredCart = cartList.filter((item) => item.id !== id);
+    localStorage.removeItem(filteredCart);
     setCartList(filteredCart);
+    if (cartList.length === 1) {
+      limpiarLs();
+    }
   };
 
   function emptyCart() {

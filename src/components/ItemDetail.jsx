@@ -1,11 +1,10 @@
-import { Button } from "@mui/material";
-import { Card } from "react-bootstrap";
-
+import { Button } from "react-bootstrap";
 import React, { useContext, useState } from "react";
 import ItemCount from "./ItemCount";
-import "./ItemDetail.css";
 import { CartContext } from "./context/CartContext";
 import { Link } from "react-router-dom";
+
+import "./ItemDetail.css";
 
 const ItemDetail = ({ item }) => {
   const [goToCart, setGoToCart] = useState(false);
@@ -18,34 +17,40 @@ const ItemDetail = ({ item }) => {
   };
 
   return (
-    <>
-      <div className="CardDetail">
-        <Card style={{ width: "23rem" }}>
-          <Card.Title>{item.title}</Card.Title>
-          <Card.Img variant="top" src={item.img} />
-          <Card.Img className="ImgCardDetail" variant="top" src={item.img} />
-          <Card.Body>
-            <Card.Text style={{ textTransform: "uppercase" }}>
-              Categoria:{" "}
-              <Link to={`/remeras/${item.category}`}>{item.category}</Link>{" "}
-            </Card.Text>
-          </Card.Body>
-
-          {!goToCart ? (
-            <ItemCount initial={1} stock={5} onAdd={onAdd} />
-          ) : (
-            <div className="d-flex justify-content-center">
-              <Link to={`/cart`}>
-                <Button variant="primary">Ir al carrito</Button>
-              </Link>
-              <Link to={`/remeras/${item.category}`}>
-                <Button variant="primary">Seguir comprando</Button>
-              </Link>
-            </div>
-          )}
-        </Card>
+    <div className="container d-flex text-center justify-content-center align-items-baseline">
+      <div>
+        <img className="w-50 mt-3" src={item.img} alt={item.title} />
       </div>
-    </>
+      <div>
+        <h3>{item.title}</h3>
+        <h4>${item.price}</h4>
+        <h5>
+          Categoria:{" "}
+          <Link
+            style={{ textTransform: "uppercase" }}
+            to={`/remeras/${item.category}`}
+          >
+            {item.category}
+          </Link>{" "}
+        </h5>
+        {!goToCart ? (
+          <ItemCount initial={1} stock={5} onAdd={onAdd} />
+        ) : (
+          <div className="d-flex justify-content-around m-2">
+            <Link to={`/cart`}>
+              <Button className="btn m-2 btn-warning bg-gradient mt-2">
+                Ir al carrito
+              </Button>
+            </Link>
+            <Link to={`/remeras/${item.category}`}>
+              <Button className="btn m-2 btn-warning bg-gradient mt-2">
+                Seguir comprando
+              </Button>
+            </Link>
+          </div>
+        )}
+      </div>
+    </div>
   );
 };
 

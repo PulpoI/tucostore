@@ -25,7 +25,7 @@ const Cart = () => {
                   <strong>No hay productos en tu carrito</strong>
                 </h3>
                 <h4 className="my-5">¿Buscamos algunos?</h4>
-                <Link className="btn btn-danger bg-gradient w-25" to="/">
+                <Link className="btn btn-warning bg-gradient w-25" to="/">
                   Ir a comprar
                 </Link>
               </div>
