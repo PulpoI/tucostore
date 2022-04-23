@@ -4,7 +4,7 @@
 
 Proyecto realizado durante la cursada del curso de React en CoderHouse.
 
-[Link:](http://store.tucoremeras.com.ar/)
+[Link: http://store.tucoremeras.com.ar/](http://store.tucoremeras.com.ar/)
 
 # Para poder usar el proyecto
 
