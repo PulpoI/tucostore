@@ -18,7 +18,7 @@ function ItemDetailContainer() {
       const dataItems = response.docs.map((doc) => {
         return { id: doc.id, ...doc.data() };
       });
-      setProducto(dataItems.find((e) => e.id == itemId));
+      setProducto(dataItems.find((e) => e.id === itemId));
       setLoading(false);
     };
     getData();
