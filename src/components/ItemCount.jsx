@@ -17,23 +17,25 @@ export default function ItemCount({ initial, stock, onAdd }) {
   };
 
   return (
-    <>
-      <div className="container justify-content-center align-items-baseline d-flex">
-        <Button
-          onClick={countDown}
-          aria-label="delete"
-          className="btn btn-warning bg-gradient mt-2 m-2"
-        >
-          <BsArrowDownCircle />
-        </Button>
-        <h5>Cantidad: {value}</h5>
-        <Button
-          className="btn btn-warning bg-gradient mt-2 m-2"
-          onClick={countUp}
-          aria-label="add"
-        >
-          <BsArrowUpCircle />
-        </Button>
+    <div className="d-flex flex-items-start mt-2">
+      <div className="d-flex flex-column align-items-center">
+        <div className=" align-items-baseline d-flex">
+          <Button
+            onClick={countDown}
+            aria-label="delete"
+            className="btn btn-sm btn-warning bg-gradient "
+          >
+            <BsArrowDownCircle />
+          </Button>
+          <h6>Cantidad: {value}</h6>
+          <Button
+            className="btn btn-sm btn-warning bg-gradient  "
+            onClick={countUp}
+            aria-label="add"
+          >
+            <BsArrowUpCircle />
+          </Button>
+        </div>
         <Button
           className="btn btn-warning bg-gradient mt-2"
           onClick={() => onAdd(value)}
@@ -41,6 +43,6 @@ export default function ItemCount({ initial, stock, onAdd }) {
           Agregar al carrito
         </Button>
       </div>
-    </>
+    </div>
   );
 }

@@ -31,7 +31,7 @@ function ItemDetailContainer() {
       ) : (
         <div>
           {" "}
-          <ItemDetail item={producto} />
+          <ItemDetail item={producto} descriptionProduct={producto.product} />
         </div>
       )}
     </>

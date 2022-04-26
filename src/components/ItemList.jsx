@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Item from "./Item";
 import Loader from "./Loader";
+import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import "./ItemList.css";
 import { Button } from "react-bootstrap";
 import Main from "./Main";
@@ -42,7 +43,10 @@ const ItemList = ({ productos }) => {
   };
 
   const prevPage = () => {
-    if (currentPage > 0) setCurrentPage(currentPage - itemsPorPagina);
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - itemsPorPagina);
+    }
+
     irArriba();
   };
 
@@ -58,25 +62,26 @@ const ItemList = ({ productos }) => {
     setCurrentPage(0);
     setLoading(false);
   }, [productos]);
-
   return (
     <>
       <Main className="main-img" foto1={foto1} foto2={foto2} foto3={foto3} />
-      <input
-        className="form-control me-2"
-        type="search"
-        placeholder="Buscar Diseño"
-        aria-label="Search"
-        value={search}
-        onChange={onSearchChange}
-      />
-      <Button
-        variant="warning"
-        className="btn btn-remove"
-        onClick={removeSearch}
-      >
-        BORRAR
-      </Button>
+      <div className="m-3 position-sticky d-flex">
+        <input
+          className="form-control"
+          type="search"
+          placeholder="Buscar Diseño"
+          aria-label="Search"
+          value={search}
+          onChange={onSearchChange}
+        />
+        <Button
+          variant="warning"
+          className="btn btn-remove "
+          onClick={removeSearch}
+        >
+          BORRAR
+        </Button>
+      </div>
 
       <div className="GridCards">
         {loading ? (
@@ -87,13 +92,31 @@ const ItemList = ({ productos }) => {
           ))
         )}
       </div>
-      <Button variant="warning" onClick={prevPage}>
-        ANTERIOR
-      </Button>
-      <hr />
-      <Button variant="warning" onClick={nextPage}>
-        SIGUIENTE
-      </Button>
+      <div className="container mt-3 mt-3 d-flex  justify-content-evenly">
+        <Button
+          className="btn-pag d-flex justify-content-evenly"
+          variant="warning"
+          disabled={currentPage === 0}
+          onClick={prevPage}
+        >
+          <div>
+            <BsArrowLeftCircle />
+          </div>
+          <div>ANTERIOR</div>
+        </Button>
+
+        <Button
+          className="btn-pag d-flex justify-content-evenly"
+          variant="warning"
+          disabled={currentPage === 100}
+          onClick={nextPage}
+        >
+          <div>SIGUIENTE</div>
+          <div>
+            <BsArrowRightCircle />
+          </div>
+        </Button>
+      </div>
     </>
   );
 };

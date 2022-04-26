@@ -4,5 +4,8 @@
     gap: 10px 10px;
     justify-content: center;
   }
-  
-  
+  .btn-pag {
+    width: 200px;
+    margin-left: 1px;
+    margin-right: 1px;
+  }

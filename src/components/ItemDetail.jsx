@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import "./ItemDetail.css";
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, descriptionProduct }) => {
   const [goToCart, setGoToCart] = useState(false);
 
   const { addToCart } = useContext(CartContext);
@@ -15,14 +15,34 @@ const ItemDetail = ({ item }) => {
     setGoToCart(true);
     addToCart({ ...item, quantity: quantity });
   };
+  const descripcionSticker = "Stickers";
+  const descripcionRemera =
+    "Todas las Remeras son de algodón peinado 24.1 y las estampas con Vinilo, Transfer y Poliamida. Utilizamos prendas y materiales de primera calidad para garantizar la durabilidad y comodidad.";
+
+  //Descripciones de productos
+  switch (descriptionProduct) {
+    case "remera":
+      descriptionProduct = descripcionRemera;
+      break;
+    case "sticker":
+      descriptionProduct = descripcionSticker;
+      break;
+    default:
+      break;
+  }
 
   return (
-    <div className="container d-flex text-center justify-content-center align-items-baseline">
-      <div>
-        <img className="w-50 mt-3" src={item.img} alt={item.title} />
+    <div className="container-fluid d-flex align-content-center align-items-center">
+      <div className="col-6">
+        <img
+          className="img-thumbnail img-detail"
+          src={item.img}
+          alt={item.title}
+        />
       </div>
-      <div>
-        <h3>{item.title}</h3>
+
+      <div className="col-6 d-flex row p-3 align-items-start">
+        <h2 className="text-center mb-5">{item.title}</h2>
         <h4>${item.price}</h4>
         <h5>
           Categoria:{" "}
@@ -33,6 +53,7 @@ const ItemDetail = ({ item }) => {
             {item.category}
           </Link>{" "}
         </h5>
+        <p>{descriptionProduct}</p>
         {!goToCart ? (
           <ItemCount initial={1} stock={5} onAdd={onAdd} />
         ) : (
