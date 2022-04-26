@@ -17,7 +17,7 @@ export default function ItemCount({ initial, stock, onAdd }) {
   };
 
   return (
-    <div className="d-flex flex-items-start mt-2">
+    <div className="d-flex justify-content-center mt-2">
       <div className="d-flex flex-column align-items-center">
         <div className=" align-items-baseline d-flex">
           <Button

@@ -28,6 +28,7 @@ const ItemList = ({ productos }) => {
   const filtered = productos.filter((producto) =>
     producto.title.toUpperCase().includes(search)
   );
+  console.log(filtered);
 
   const irArriba = () => {
     window.scrollTo({
@@ -62,10 +63,12 @@ const ItemList = ({ productos }) => {
     setCurrentPage(0);
     setLoading(false);
   }, [productos]);
+
+  console.log(currentPage);
   return (
     <>
       <Main className="main-img" foto1={foto1} foto2={foto2} foto3={foto3} />
-      <div className="m-3 position-sticky d-flex">
+      <div className="m-2 sticky-top d-flex">
         <input
           className="form-control"
           type="search"
@@ -92,7 +95,7 @@ const ItemList = ({ productos }) => {
           ))
         )}
       </div>
-      <div className="container mt-3 mt-3 d-flex  justify-content-evenly">
+      <div className="container mt-3  d-flex  justify-content-evenly">
         <Button
           className="btn-pag d-flex justify-content-evenly"
           variant="warning"
@@ -108,7 +111,7 @@ const ItemList = ({ productos }) => {
         <Button
           className="btn-pag d-flex justify-content-evenly"
           variant="warning"
-          disabled={currentPage === 100}
+          disabled={currentPage === 100 || filtered.length < currentPage + 20}
           onClick={nextPage}
         >
           <div>SIGUIENTE</div>
