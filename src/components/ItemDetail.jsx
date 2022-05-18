@@ -8,6 +8,17 @@ import "./ItemDetail.css";
 
 const ItemDetail = ({ item, descriptionProduct }) => {
   const [goToCart, setGoToCart] = useState(false);
+  const [color, setColor] = useState(item.img);
+
+  const colorWhite = () => {
+    setColor(item.imgColor.imgWhite);
+  };
+  const colorBlack = () => {
+    setColor(item.imgColor.imgBlack);
+  };
+  const colorGray = () => {
+    setColor(item.imgColor.imgGray);
+  };
 
   const { addToCart } = useContext(CartContext);
 
@@ -32,16 +43,21 @@ const ItemDetail = ({ item, descriptionProduct }) => {
   }
 
   return (
-    <div className="container-fluid d-flex align-content-center align-items-center">
+    <div className="container-fluid container-detail d-flex align-content-center align-items-center">
       <div className="col-6">
         <img
           className="img-thumbnail img-detail"
-          src={item.img}
+          src={color}
           alt={item.title}
         />
       </div>
 
       <div className="col-6 d-flex row p-3 align-items-start">
+        <Link to={`/remeras/${item.category}`}>
+          <Button className="btn m-2 btn-warning bg-gradient mt-2">
+            Volver{" "}
+          </Button>
+        </Link>
         <h2 className="text-center mb-5">{item.title}</h2>
         <h4>${item.price}</h4>
         <h5>
@@ -54,6 +70,43 @@ const ItemDetail = ({ item, descriptionProduct }) => {
           </Link>{" "}
         </h5>
         <p>{descriptionProduct}</p>
+        <div className="d-flex flex-column align-content-center align-items-center btn-colors">
+          <h5 className="text-center">Colores</h5>
+          <div>
+            <input
+              className="btn btn-black"
+              type="button"
+              value="Negro"
+              onClick={colorBlack}
+              disabled={
+                item.imgColor.imgBlack === item.imgColor.imgGray ||
+                item.imgColor.imgBlack === item.imgColor.imgWhite
+              }
+            />
+
+            <input
+              className="btn btn-white"
+              type="button"
+              value="Blanco"
+              onClick={colorWhite}
+              disabled={
+                item.imgColor.imgWhite === item.imgColor.imgGray ||
+                item.imgColor.imgWhite === item.imgColor.imgBlack
+              }
+            />
+            <input
+              className="btn btn-gray"
+              type="button"
+              value="Gris"
+              onClick={colorGray}
+              disabled={
+                item.imgColor.imgGray === item.imgColor.imgWhite ||
+                item.imgColor.imgGray === item.imgColor.imgBlack
+              }
+            />
+          </div>
+        </div>
+
         {!goToCart ? (
           <ItemCount initial={1} stock={5} onAdd={onAdd} />
         ) : (

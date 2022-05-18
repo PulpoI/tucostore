@@ -7,6 +7,7 @@ import CartContextProvider from "./components/context/CartContext";
 import Cart from "./components/Cart";
 import FormBuyer from "./components/FormBuyer";
 import Home from "./views/Home/Home";
+import Footer from "./components/Footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="checkout" element={<FormBuyer />}></Route>
           <Route exact path="*" element={<Error404 />} />
         </Routes>
+        {/* <Footer /> */}
       </BrowserRouter>
     </CartContextProvider>
   );

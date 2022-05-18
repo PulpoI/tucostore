@@ -4,4 +4,31 @@
    align-items: center;
 }
 
+.btn-colors input {
+padding: 5px;
+width: 100px;
 
+margin: 5px;
+margin-bottom: 20px;
+}
+
+
+.btn-black {
+    background-color: black;
+    color: white;
+}
+
+.btn-white {
+    background-color: white;
+    border: solid 1px black;
+}
+.btn-white:hover {
+    color: gray;
+    border: solid 1px gray;;
+    background-color: whitesmoke;
+}
+
+.btn-gray{
+    background-color: gray;
+    color: white;
+}

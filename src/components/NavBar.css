@@ -1,0 +1,28 @@
+.hover-button--on{
+  display: none;
+}
+
+.hover-button:hover .hover-button--on {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  align-items: flex-start;
+  align-content: center;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+border: 2px solid black;
+border-radius: 0.25rem;
+}
+
+.dropdown-menu {
+  z-index: 2000;
+}
+
+.lista-hover {
+  padding: 200px;
+}
+
+/* .dropdown-menu{
+  min-width: 6rem !important;
+} */

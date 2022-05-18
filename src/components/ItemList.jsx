@@ -9,6 +9,7 @@ import Main from "./Main";
 import foto1 from "../assets/image_11.jpg";
 import foto2 from "../assets/image_22.jpg";
 import foto3 from "../assets/image_44.jpg";
+import Footer from "./Footer";
 
 const ItemList = ({ productos }) => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -120,6 +121,7 @@ const ItemList = ({ productos }) => {
           </div>
         </Button>
       </div>
+      <Footer />
     </>
   );
 };

@@ -20,9 +20,7 @@ const Item = ({ producto }) => {
           </Card.Subtitle>
           <Card.Text>Precio: ${producto.price}</Card.Text>
 
-          <Card.Footer style={{ backgroundColor: "black", color: "yellow" }}>
-            Ver detalles
-          </Card.Footer>
+          <Card.Footer className="btn-warning">Ver detalles</Card.Footer>
         </Card.Body>
       </Card>
     </Link>

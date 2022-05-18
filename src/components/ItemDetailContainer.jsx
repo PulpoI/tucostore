@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../utils/firebase";
 import Loader from "./Loader";
+import Footer from "./Footer";
 
 function ItemDetailContainer() {
   const { itemId } = useParams();
@@ -32,6 +33,7 @@ function ItemDetailContainer() {
         <div>
           {" "}
           <ItemDetail item={producto} descriptionProduct={producto.product} />
+          <Footer />
         </div>
       )}
     </>
