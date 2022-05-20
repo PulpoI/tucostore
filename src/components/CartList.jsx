@@ -10,20 +10,20 @@ const CartList = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="row mt-3 justify-content-center text-center">
-          <div className="col-lg-3 col-sm-3"></div>
-          <h5 className="col-lg-4 col-sm-4">Producto:</h5>
-          <h5 className="col-lg-1 col-sm-1">Precio:</h5>
-          <h5 className="col-lg-1 col-sm-1">Cantidad:</h5>
-          <h5 className="col-lg-2 col-sm-2">Total:</h5>
-          <div className="col-lg-1 col-sm-1"></div>
+      <div className="container cartList">
+        <div className="row mt-3 tabla justify-content-center text-center">
+          <div className="col-lg-3 col-sm-2"></div>
+          <h5 className="col-lg-4 col-sm-2">Producto:</h5>
+          <h5 className="col-lg-1 col-sm-2">Precio:</h5>
+          <h5 className="col-lg-1 col-sm-2">Cantidad:</h5>
+          <h5 className="col-lg-2 col-sm-2">Subtotal:</h5>
+          <div className="col-lg-1 col-sm-2"></div>
         </div>
         <hr></hr>
         <div className="row justify-content-center text-center">
           {cartList.map((prod) => (
             <div className="row align-items-center" key={prod.id}>
-              <div className="col-lg-3 div-img col-sm-3">
+              <div className="col-lg-3 div-img col-sm-2">
                 <Link onClick={irArriba} to={`/detail/${prod.id}`}>
                   <img
                     className="img-cart"
@@ -32,7 +32,7 @@ const CartList = () => {
                   ></img>
                 </Link>
               </div>
-              <div className="px-0 col-lg-4 col-sm-4">
+              <div className="px-0 col-lg-4 col-sm-2">
                 <Link onClick={irArriba} to={`/detail/${prod.id}`}>
                   <h5>
                     {prod.product.charAt(0).toUpperCase()}
@@ -41,16 +41,16 @@ const CartList = () => {
                   <h5>"{prod.title.substring(0, prod.title.length - 1)}"</h5>
                 </Link>
               </div>
-              <div className="col-lg-1 col-sm-1">
+              <div className="col-lg-1 precio col-sm-2">
                 <h5>${prod.price}</h5>
               </div>
-              <div className="col-lg-1 col-sm-1">
+              <div className="col-lg-1 col-sm-2">
                 <h5>{prod.quantity}</h5>
               </div>
               <div className="col-lg-2 col-sm-2">
                 <h5>${prod.quantity * prod.price}</h5>
               </div>
-              <div className="col-lg-1 col-sm-1">
+              <div className="col-lg-1 col-sm-2">
                 <button
                   className="btn btn-warning bg-gradient"
                   onClick={() => removeItem(prod.id)}

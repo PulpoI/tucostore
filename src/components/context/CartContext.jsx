@@ -32,6 +32,7 @@ const CartContextProvider = ({ children }) => {
   function emptyCart() {
     setCartList([]);
     limpiarLs();
+    irArriba();
   }
 
   // Contador carrito

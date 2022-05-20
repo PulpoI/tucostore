@@ -29,6 +29,7 @@ const NavBar = () => {
             </Nav.Link>
 
             <NavDropdownMenu
+              className=" active"
               title="Remeras"
               id="collasible-nav-dropdown nav-link"
               aria-current="page"

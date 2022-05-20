@@ -1,10 +1,54 @@
 .img-cart {
     width: 100px;
-    transform: scale(1.5);
+    transform: scale(1.6);
     
 }
 
 .div-img {
     overflow: hidden;
+    
+
+}
+.cartList {
+    width: 100% !important;
+
+}
+
+@media (max-width: 768px) {
+    .cartList{
+
+        max-width: 900px;
+        margin: 0px !important;
+        padding: 0px !important;
+    } 
+    .img-cart {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .cartList{
+
+        max-width: 100%;
+        max-width: 900px !important;
+    } 
+    .img-cart {
+        width: 130px !important;
+        transform: scale(1.5);
+    }
+    .img-cart {
+        width: 100px;
+        
+        
+    }
+    .tabla{
+        display: none;
+    }
+    .precio {
+        display: none;
+    }
+    h5{
+        margin-bottom: 0 !important;
+    }
 
 }
