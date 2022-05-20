@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../utils/firebase";
 import Loader from "./Loader";
+import axios from "axios";
 
 function ItemDetailContainer() {
   const { itemId } = useParams();
@@ -11,37 +12,22 @@ function ItemDetailContainer() {
   const [loading, setLoading] = useState(true);
 
   // ------ bd en JSON --------- //
-  // useEffect(() => {
-  //   const jsonData = require("../utils/larralde.json");
-  //   setProducto(jsonData);
-  //   setLoading(false);
-  // }, []);
-
-  // ------ bd en FIREBASE --------- //
-
   useEffect(() => {
-    // const getData = async () => {
-    const jsonData = fetch("../utils/larralde.json").then((response) => {
-      return response.json();
+    const obtenerProductos = axios(
+      "https://pulpoi.github.io/bd-tuco-store/bd.json"
+    ).then((res) => res);
+    setTimeout(() => {
+      setLoading(false);
+    }, 300);
+    obtenerProductos.then((res) => {
+      setProducto(res.data.find((e) => e.id == itemId));
     });
-
-    // const dataItems = response.map((doc) => {
-    //   return { id: doc.id, ...doc };
-    // });
-
-    // console.log(dataItems);
-    console.log(jsonData);
-
-    setProducto(jsonData.find((e) => e.id === itemId));
-    setLoading(false);
-    // };
-    // getData();
-  }, [itemId]);
-
+  }, []);
   console.log(producto);
 
   console.log(itemId);
 
+  // ------ bd en FIREBASE --------- //
   // useEffect(() => {
   //   const getData = async () => {
   //     const query = collection(db, "items");

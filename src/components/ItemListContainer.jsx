@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../utils/firebase";
 import Loader from "./Loader";
+import axios from "axios";
 
 const ItemListContainer = () => {
   const { categoria } = useParams();
@@ -12,9 +13,21 @@ const ItemListContainer = () => {
 
   // ------ bd en JSON --------- //
   useEffect(() => {
-    const jsonData = require("../utils/larralde.json");
-    setProductos(jsonData);
-    setLoading(false);
+    const obtenerProductos = axios(
+      "https://pulpoi.github.io/bd-tuco-store/bd.json"
+    ).then((res) => res);
+    setTimeout(() => {
+      setLoading(false);
+    }, 300);
+    if (!categoria) {
+      obtenerProductos.then((res) => setProductos(res.data));
+    } else {
+      obtenerProductos.then((res) => {
+        setProductos(
+          res.data.filter((productos) => productos.category === categoria)
+        );
+      });
+    }
   }, [categoria]);
 
   // ------ bd en FIREBASE --------- //

@@ -21,7 +21,7 @@ const NavBar = () => {
               Home
             </Nav.Link>
             <Nav.Link
-              href="/tuco"
+              href="/remeras/tuco"
               className="nav-link active"
               aria-current="page"
             >
