@@ -5,7 +5,8 @@ import Footer from "./Footer";
 import "./CartList.css";
 
 const CartList = () => {
-  const { cartList, totalBuy, removeItem, emptyCart } = useContext(CartContext);
+  const { cartList, totalBuy, removeItem, emptyCart, irArriba } =
+    useContext(CartContext);
 
   return (
     <>
@@ -23,7 +24,7 @@ const CartList = () => {
           {cartList.map((prod) => (
             <div className="row align-items-center" key={prod.id}>
               <div className="col-lg-3 div-img col-sm-3">
-                <Link to={`/detail/${prod.id}`}>
+                <Link onClick={irArriba} to={`/detail/${prod.id}`}>
                   <img
                     className="img-cart"
                     src={prod.img}
@@ -32,7 +33,7 @@ const CartList = () => {
                 </Link>
               </div>
               <div className="px-0 col-lg-4 col-sm-4">
-                <Link to={`/detail/${prod.id}`}>
+                <Link onClick={irArriba} to={`/detail/${prod.id}`}>
                   <h5>
                     {prod.product.charAt(0).toUpperCase()}
                     {prod.product.slice(1)}:
