@@ -10,20 +10,27 @@ const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // ------ bd en JSON --------- //
   useEffect(() => {
-    const getData = async () => {
-      const query = collection(db, "items");
-      const response = await getDocs(query).finally(() => setLoading(false));
-
-      const dataItems = response.docs.map((doc) => {
-        return { id: doc.id, ...doc.data() };
-      });
-      setProductos(
-        dataItems.filter((productos) => productos.category === categoria)
-      );
-    };
-    getData();
+    const jsonData = require("../utils/larralde.json");
+    setProductos(jsonData);
+    setLoading(false);
   }, [categoria]);
+
+  // ------ bd en FIREBASE --------- //
+  // useEffect(() => {
+  //   // const getData = async () => {
+  // const query = collection(db, "items");
+  // const response = await getDocs(query).finally(() => setLoading(false));
+  // const dataItems = response.docs.map((doc) => {
+  //   return { id: doc.id, ...doc.data() };
+  // });
+  // setProductos(
+  //   dataItems.filter((productos) => productos.category === categoria)
+  // );
+  // };
+  // getData();
+  // }, [categoria]);
 
   return <>{loading ? <Loader /> : <ItemList productos={productos} />}</>;
 };

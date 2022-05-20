@@ -6,9 +6,20 @@ import "./Item.css";
 const Item = ({ producto }) => {
   const titulo = producto.title.toUpperCase().split(" ");
 
+  const irArriba = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <Link className="Card text-center" to={`/detail/${producto.id}`}>
-      <Card style={{ width: "16rem" }}>
+    <Link
+      onClick={irArriba}
+      className="Card text-center"
+      to={`/detail/${producto.id}`}
+    >
+      <Card>
         <Card.Img className="ImgCard" variant="top" src={producto.img} />
         <Card.Body>
           <Card.Title as={"h6"}>

@@ -3,10 +3,67 @@ import logo from "../assets/logoD.png";
 import CartWidget from "../components/CartWidget";
 import "./NavBar.css";
 
+import { DropdownSubmenu, NavDropdownMenu } from "react-bootstrap-submenu";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+
 const NavBar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar.Brand href="https://tucoremeras.com.ar/">
+          {" "}
+          <img src={logo} alt="" style={{ width: "7rem" }} />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="/" className="nav-link active" aria-current="page">
+              Home
+            </Nav.Link>
+            <Nav.Link
+              href="/tuco"
+              className="nav-link active"
+              aria-current="page"
+            >
+              Exclusivos
+            </Nav.Link>
+
+            <NavDropdownMenu
+              title="Remeras"
+              id="collasible-nav-dropdown nav-link"
+              aria-current="page"
+            >
+              <NavDropdown.Item href="/remeras/meme">Memes</NavDropdown.Item>
+              <DropdownSubmenu href="#" title="Música">
+                <NavDropdown.Item href="/remeras/musica-argentina">
+                  Música Argentina
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/remeras/la renga">
+                  La Renga
+                </NavDropdown.Item>
+              </DropdownSubmenu>
+              <DropdownSubmenu href="#" title="Deporte">
+                <NavDropdown.Item href="/remeras/diego maradona">
+                  Diego Maradona
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/remeras/tuco">Diegoo</NavDropdown.Item>
+                <NavDropdown.Item href="/remeras/futbol-argentino">
+                  Futbol Argentino
+                </NavDropdown.Item>
+              </DropdownSubmenu>
+              <NavDropdown.Item href="/remeras/trasher">
+                Thrasher
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/remeras/nasa">Nasa</NavDropdown.Item>
+            </NavDropdownMenu>
+          </Nav>
+        </Navbar.Collapse>
+        <Link className="m-3" to="/cart">
+          <CartWidget />{" "}
+        </Link>
+      </Navbar>
+
+      {/* <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <a href="https://tucoremeras.com.ar/" className="navbar-brand">
             <img src={logo} alt="" style={{ width: "7rem" }} />
@@ -30,6 +87,11 @@ const NavBar = () => {
                 </Link>
               </li>
 
+
+
+
+
+
               <li className="nav-item dropdown">
                 <Link
                   to="/"
@@ -41,6 +103,7 @@ const NavBar = () => {
                 >
                   Remeras
                 </Link>
+
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
                     <Link to="/remeras/meme" className="dropdown-item">
@@ -101,7 +164,7 @@ const NavBar = () => {
             </Link>
           </div>
         </div>
-      </nav>
+      </nav> */}
     </div>
   );
 };

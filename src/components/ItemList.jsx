@@ -15,6 +15,7 @@ const ItemList = ({ productos }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
+  const [numPagina, setNumPagina] = useState(1);
 
   const itemsPorPagina = 20;
 
@@ -29,7 +30,6 @@ const ItemList = ({ productos }) => {
   const filtered = productos.filter((producto) =>
     producto.title.toUpperCase().includes(search)
   );
-  console.log(filtered);
 
   const irArriba = () => {
     window.scrollTo({
@@ -41,12 +41,14 @@ const ItemList = ({ productos }) => {
   const nextPage = () => {
     if (filtered.length > currentPage + itemsPorPagina)
       setCurrentPage(currentPage + itemsPorPagina);
+    setNumPagina(numPagina + 1);
     irArriba();
   };
 
   const prevPage = () => {
     if (currentPage > 0) {
       setCurrentPage(currentPage - itemsPorPagina);
+      setNumPagina(numPagina - 1);
     }
 
     irArriba();
@@ -65,7 +67,6 @@ const ItemList = ({ productos }) => {
     setLoading(false);
   }, [productos]);
 
-  console.log(currentPage);
   return (
     <>
       <Main className="main-img" foto1={foto1} foto2={foto2} foto3={foto3} />
@@ -73,7 +74,7 @@ const ItemList = ({ productos }) => {
         <input
           className="form-control"
           type="search"
-          placeholder="Buscar Diseño"
+          placeholder={"Buscar en esta categoría"}
           aria-label="Search"
           value={search}
           onChange={onSearchChange}
@@ -96,7 +97,7 @@ const ItemList = ({ productos }) => {
           ))
         )}
       </div>
-      <div className="container mt-3  d-flex  justify-content-evenly">
+      <div className="container mt-5  d-flex align-items-baseline  justify-content-evenly">
         <Button
           className="btn-pag d-flex justify-content-evenly"
           variant="warning"
@@ -108,7 +109,7 @@ const ItemList = ({ productos }) => {
           </div>
           <div>ANTERIOR</div>
         </Button>
-
+        <h5>Página {numPagina}</h5>
         <Button
           className="btn-pag d-flex justify-content-evenly"
           variant="warning"
@@ -120,6 +121,26 @@ const ItemList = ({ productos }) => {
             <BsArrowRightCircle />
           </div>
         </Button>
+      </div>
+      <div className="d-flex flex-column text-center mt-5">
+        <h3>¿No te gusta ninguo?</h3>
+        <a
+          href="https://creador.tucoremeras.com.ar/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <h2>¡CREALO!</h2>
+        </a>
+        <p>
+          Crea tu estilo usando el <br />{" "}
+          <a
+            href="https://creador.tucoremeras.com.ar/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button variant="warning">CREADOR </Button>{" "}
+          </a>
+        </p>
       </div>
       <Footer />
     </>

@@ -6,8 +6,7 @@ import Error404 from "./components/Error404";
 import CartContextProvider from "./components/context/CartContext";
 import Cart from "./components/Cart";
 import FormBuyer from "./components/FormBuyer";
-import Home from "./views/Home/Home";
-import Footer from "./components/Footer";
+import Home from "./views/Home";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -18,12 +17,14 @@ function App() {
         <NavBar />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/remeras/" element={<ItemListContainer />} />
+
+          <Route exact path="/:categoria" element={<ItemListContainer />} />
           <Route
             exact
-            path="/remeras/:categoria"
+            path="remeras/:categoria"
             element={<ItemListContainer />}
           />
+
           <Route
             exact
             path="/detail/:itemId"

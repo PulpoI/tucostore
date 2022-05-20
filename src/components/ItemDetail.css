@@ -32,3 +32,19 @@ margin-bottom: 20px;
     background-color: gray;
     color: white;
 }
+
+@media (max-width: 575.98px) { 
+    .container-detail{
+        flex-direction: column;
+    }
+    .col-6{
+        width: 100%;
+    }
+    .btn-colors input{
+        width: 80px;
+    }
+ }
+
+ .Card:hover {
+     color: rgb(54, 54, 54) !important;
+ }
