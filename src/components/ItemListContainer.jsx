@@ -14,7 +14,7 @@ const ItemListContainer = () => {
   // ------ bd en JSON --------- //
   useEffect(() => {
     const obtenerProductos = axios(
-      "https://pulpoi.github.io/bd-tuco-store/bd.json"
+      "https://pulpoi.github.io/tucostore/src/utils/bd-tuco-store.json"
     ).then((res) => res);
     setTimeout(() => {
       setLoading(false);

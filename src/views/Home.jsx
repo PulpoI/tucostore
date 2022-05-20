@@ -18,7 +18,7 @@ function Home() {
           <h1>BIENVENIDO/A A LA TIENDA</h1>
           <h2>
             Visita nuestros diseños
-            <Link to="/tuco">
+            <Link to="/remeras/tuco">
               <Button variant="warning"> Exclusivos </Button>{" "}
             </Link>
           </h2>

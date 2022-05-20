@@ -46,7 +46,7 @@ const NavBar = () => {
                 <NavDropdown.Item href="/remeras/diego maradona">
                   Diego Maradona
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/remeras/tuco">Diegoo</NavDropdown.Item>
+
                 <NavDropdown.Item href="/remeras/futbol-argentino">
                   Futbol Argentino
                 </NavDropdown.Item>

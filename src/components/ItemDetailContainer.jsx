@@ -14,7 +14,7 @@ function ItemDetailContainer() {
   // ------ bd en JSON --------- //
   useEffect(() => {
     const obtenerProductos = axios(
-      "https://pulpoi.github.io/bd-tuco-store/bd.json"
+      "https://pulpoi.github.io/tucostore/src/utils/bd-tuco-store.json"
     ).then((res) => res);
     setTimeout(() => {
       setLoading(false);
@@ -22,10 +22,7 @@ function ItemDetailContainer() {
     obtenerProductos.then((res) => {
       setProducto(res.data.find((e) => e.id == itemId));
     });
-  }, []);
-  console.log(producto);
-
-  console.log(itemId);
+  }, [itemId]);
 
   // ------ bd en FIREBASE --------- //
   // useEffect(() => {
