@@ -47,6 +47,13 @@ const CartContextProvider = ({ children }) => {
     );
   };
 
+  const irArriba = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   const upperStart = (e) => {
     const upper = e.charAt(0).toUpperCase();
     console.log(upper);
@@ -81,6 +88,7 @@ const CartContextProvider = ({ children }) => {
         cartCounter,
         totalBuy,
         upperStart,
+        irArriba,
       }}
     >
       {children}

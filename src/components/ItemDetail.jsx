@@ -10,6 +10,7 @@ import Footer from "./Footer";
 const ItemDetail = ({ item, descriptionProduct }) => {
   const [goToCart, setGoToCart] = useState(false);
   const [color, setColor] = useState(item.img);
+  const { irArriba } = useContext(CartContext);
 
   const colorWhite = () => {
     setColor(item.imgColor.imgWhite);
@@ -118,12 +119,12 @@ const ItemDetail = ({ item, descriptionProduct }) => {
             <ItemCount initial={1} stock={5} onAdd={onAdd} />
           ) : (
             <div className="d-flex justify-content-around m-2">
-              <Link to={`/cart`}>
+              <Link onClick={irArriba} to={`/cart`}>
                 <Button className="btn m-2 btn-warning bg-gradient mt-2">
                   Ir al carrito
                 </Button>
               </Link>
-              <Link to={`/remeras/${item.category}`}>
+              <Link onClick={irArriba} to={`/remeras/${item.category}`}>
                 <Button className="btn m-2 btn-warning bg-gradient mt-2">
                   Seguir comprando
                 </Button>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Home.css";
 import Main from "../components/Main";
 
@@ -8,8 +8,11 @@ import foto3 from "../assets/image_4.jpg";
 import Footer from "../components/Footer";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { CartContext } from "../components/context/CartContext";
 
 function Home() {
+  const { irArriba } = useContext(CartContext);
+
   return (
     <div>
       <div className="main">
@@ -18,7 +21,7 @@ function Home() {
           <h1>BIENVENIDO/A A LA TIENDA</h1>
           <h2>
             Visita nuestros diseños
-            <Link to="/remeras/tuco">
+            <Link onClick={irArriba} to="/remeras/tuco">
               <Button variant="warning"> Exclusivos </Button>{" "}
             </Link>
           </h2>

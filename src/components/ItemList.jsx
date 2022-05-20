@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Item from "./Item";
 import Loader from "./Loader";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
@@ -10,12 +10,14 @@ import foto1 from "../assets/image_11.jpg";
 import foto2 from "../assets/image_22.jpg";
 import foto3 from "../assets/image_44.jpg";
 import Footer from "./Footer";
+import { CartContext } from "./context/CartContext";
 
 const ItemList = ({ productos }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [numPagina, setNumPagina] = useState(1);
+  const { irArriba } = useContext(CartContext);
 
   const itemsPorPagina = 20;
 
@@ -30,13 +32,6 @@ const ItemList = ({ productos }) => {
   const filtered = productos.filter((producto) =>
     producto.title.toUpperCase().includes(search)
   );
-
-  const irArriba = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   const nextPage = () => {
     if (filtered.length > currentPage + itemsPorPagina)
