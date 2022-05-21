@@ -42,6 +42,11 @@ const NavBar = () => {
                   La Renga
                 </NavDropdown.Item>
               </DropdownSubmenu>
+              <DropdownSubmenu href="#" title="Series/TV/Películas">
+                <NavDropdown.Item href="/remeras/los-simpsons">
+                  Los Simpsons
+                </NavDropdown.Item>
+              </DropdownSubmenu>
               <DropdownSubmenu href="#" title="Deporte">
                 <NavDropdown.Item href="/remeras/diego maradona">
                   Maradona
