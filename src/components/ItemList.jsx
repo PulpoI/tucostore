@@ -108,7 +108,7 @@ const ItemList = ({ productos }) => {
         <Button
           className="btn-pag d-flex justify-content-evenly"
           variant="warning"
-          disabled={currentPage === 100 || filtered.length < currentPage + 20}
+          disabled={filtered.length < currentPage + 21}
           onClick={nextPage}
         >
           <div>SIGUIENTE</div>
