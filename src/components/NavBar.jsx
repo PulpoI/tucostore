@@ -34,7 +34,6 @@ const NavBar = () => {
               id="collasible-nav-dropdown nav-link"
               aria-current="page"
             >
-              <NavDropdown.Item href="/remeras/meme">Memes</NavDropdown.Item>
               <DropdownSubmenu href="#" title="Música">
                 <NavDropdown.Item href="/remeras/musica-argentina">
                   Música Argentina
@@ -45,17 +44,23 @@ const NavBar = () => {
               </DropdownSubmenu>
               <DropdownSubmenu href="#" title="Deporte">
                 <NavDropdown.Item href="/remeras/diego maradona">
-                  Diego Maradona
+                  Maradona
                 </NavDropdown.Item>
 
                 <NavDropdown.Item href="/remeras/futbol-argentino">
                   Futbol Argentino
                 </NavDropdown.Item>
               </DropdownSubmenu>
-              <NavDropdown.Item href="/remeras/trasher">
-                Thrasher
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/remeras/nasa">Nasa</NavDropdown.Item>
+              <DropdownSubmenu href="#" title="Otros">
+                <NavDropdown.Item href="/remeras/trasher">
+                  Thrasher
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/remeras/nasa">Nasa</NavDropdown.Item>
+                <NavDropdown.Item href="/remeras/meme">Memes</NavDropdown.Item>
+                <NavDropdown.Item href="/remeras/tendencia">
+                  Tendencia
+                </NavDropdown.Item>
+              </DropdownSubmenu>
             </NavDropdownMenu>
           </Nav>
         </Navbar.Collapse>

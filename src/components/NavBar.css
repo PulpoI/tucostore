@@ -17,6 +17,7 @@ border-radius: 0.25rem;
 
 .dropdown-menu {
   z-index: 2000;
+  padding: 0!important;
 }
 
 .lista-hover {
