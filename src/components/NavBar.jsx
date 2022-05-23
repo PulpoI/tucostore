@@ -27,7 +27,7 @@ const NavBar = () => {
             >
               Exclusivos
             </Link>
-
+            {/* REMERAS */}
             <NavDropdownMenu
               href="#"
               className=" active"
@@ -96,6 +96,154 @@ const NavBar = () => {
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#">
                   <Link className="pt-2 pb-2 subMenu" to="/remeras/tendencia">
+                    <p>Tendencia</p>
+                  </Link>
+                </NavDropdown.Item>
+              </DropdownSubmenu>
+            </NavDropdownMenu>
+            {/* HOODIES */}
+            <NavDropdownMenu
+              href="#"
+              className=" active"
+              title="Hoodies"
+              id="collasible-nav-dropdown nav-link"
+              aria-current="page"
+            >
+              <DropdownSubmenu href="#" title="Música">
+                <NavDropdown.Item href="#">
+                  <Link
+                    className="pt-2 pb-2 subMenu"
+                    to="/hoodies/musica-argentina"
+                  >
+                    <p>Música Argentina</p>
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/hoodies/la renga">
+                    <p>La Renga</p>
+                  </Link>
+                </NavDropdown.Item>
+              </DropdownSubmenu>
+              <DropdownSubmenu href="#" title="Series/TV/Películas">
+                <NavDropdown.Item href="#">
+                  <Link
+                    className="pt-2 pb-2 subMenu"
+                    to="/hoodies/los-simpsons"
+                  >
+                    <p>Los Simpsons</p>
+                  </Link>
+                </NavDropdown.Item>
+              </DropdownSubmenu>
+              <DropdownSubmenu href="#" title="Deporte">
+                <NavDropdown.Item href="#">
+                  <Link
+                    className="pt-2 pb-2 subMenu"
+                    to="/hoodies/diego maradona"
+                  >
+                    <p>Maradona</p>
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link
+                    className="pt-2 pb-2 subMenu"
+                    to="/hoodies/futbol-argentino"
+                  >
+                    <p>Futbol Argentino</p>
+                  </Link>
+                </NavDropdown.Item>
+              </DropdownSubmenu>
+              <DropdownSubmenu href="#" title="Otros">
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/hoodies/trasher">
+                    <p>Thrasher</p>
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/hoodies/nasa">
+                    <p>Nasa</p>
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/hoodies/meme">
+                    <p>Memes</p>
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/hoodies/tendencia">
+                    <p>Tendencia</p>
+                  </Link>
+                </NavDropdown.Item>
+              </DropdownSubmenu>
+            </NavDropdownMenu>
+            {/* STICKERS */}
+            <NavDropdownMenu
+              href="#"
+              className=" active"
+              title="Stickers"
+              id="collasible-nav-dropdown nav-link"
+              aria-current="page"
+            >
+              <DropdownSubmenu href="#" title="Música">
+                <NavDropdown.Item href="#">
+                  <Link
+                    className="pt-2 pb-2 subMenu"
+                    to="/stickers/musica-argentina"
+                  >
+                    <p>Música Argentina</p>
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/stickers/la renga">
+                    <p>La Renga</p>
+                  </Link>
+                </NavDropdown.Item>
+              </DropdownSubmenu>
+              <DropdownSubmenu href="#" title="Series/TV/Películas">
+                <NavDropdown.Item href="#">
+                  <Link
+                    className="pt-2 pb-2 subMenu"
+                    to="/stickers/los-simpsons"
+                  >
+                    <p>Los Simpsons</p>
+                  </Link>
+                </NavDropdown.Item>
+              </DropdownSubmenu>
+              <DropdownSubmenu href="#" title="Deporte">
+                <NavDropdown.Item href="#">
+                  <Link
+                    className="pt-2 pb-2 subMenu"
+                    to="/stickers/diego maradona"
+                  >
+                    <p>Maradona</p>
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link
+                    className="pt-2 pb-2 subMenu"
+                    to="/stickers/futbol-argentino"
+                  >
+                    <p>Futbol Argentino</p>
+                  </Link>
+                </NavDropdown.Item>
+              </DropdownSubmenu>
+              <DropdownSubmenu href="#" title="Otros">
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/stickers/trasher">
+                    <p>Thrasher</p>
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/stickers/nasa">
+                    <p>Nasa</p>
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/stickers/meme">
+                    <p>Memes</p>
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/stickers/tendencia">
                     <p>Tendencia</p>
                   </Link>
                 </NavDropdown.Item>

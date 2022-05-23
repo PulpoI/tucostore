@@ -6,16 +6,14 @@ import { db } from "../utils/firebase";
 import Loader from "./Loader";
 import axios from "axios";
 
-function ItemDetailContainer() {
+function ItemDetailContainer({ product }) {
   const { itemId } = useParams();
   const [producto, setProducto] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // ------ bd en JSON --------- //
   useEffect(() => {
-    const obtenerProductos = axios(
-      "https://pulpoi.github.io/tucostore/src/utils/bd-tuco-store.json"
-    ).then((res) => res);
+    const obtenerProductos = axios(product).then((res) => res);
     setTimeout(() => {
       setLoading(false);
     }, 300);

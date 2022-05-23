@@ -17,7 +17,7 @@ const Item = ({ producto }) => {
     <Link
       onClick={irArriba}
       className="Card text-center"
-      to={`/detail/${producto.id}`}
+      to={`/${producto.product}/${producto.id}`}
     >
       <Card>
         <Card.Img className="ImgCard" variant="top" src={producto.img} />

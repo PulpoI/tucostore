@@ -1,7 +1,7 @@
 .ImgCard:hover {
    /* object-fit: none; */
   transform: scale(2.8);
-  padding-top: 40px;
+  padding-top: 80px;
   }
 .ImgCard{
   object-fit: cover;

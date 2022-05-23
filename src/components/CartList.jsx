@@ -24,7 +24,7 @@ const CartList = () => {
           {cartList.map((prod) => (
             <div className="row align-items-center" key={prod.id}>
               <div className="col-lg-3 div-img col-sm-2">
-                <Link onClick={irArriba} to={`/detail/${prod.id}`}>
+                <Link onClick={irArriba} to={`/${prod.product}/${prod.id}`}>
                   <img
                     className="img-cart"
                     src={prod.img}
@@ -33,7 +33,7 @@ const CartList = () => {
                 </Link>
               </div>
               <div className="px-0 col-lg-4 col-sm-2">
-                <Link onClick={irArriba} to={`/detail/${prod.id}`}>
+                <Link onClick={irArriba} to={`/${prod.product}/${prod.id}`}>
                   <h5>
                     {prod.product.charAt(0).toUpperCase()}
                     {prod.product.slice(1)}:

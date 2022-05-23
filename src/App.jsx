@@ -23,14 +23,30 @@ function App() {
             exact
             path="remeras/:categoria"
             element={
-              <ItemListContainer producto="https://pulpoi.github.io/tucostore/src/utils/bd-tuco-store.json" />
+              <ItemListContainer producto="https://pulpoi.github.io/tucostore/src/utils/bd-tuco-remeras.json" />
+            }
+          />
+          <Route
+            exact
+            path="hoodies/:categoria"
+            element={
+              <ItemListContainer producto="https://pulpoi.github.io/tucostore/src/utils/bd-tuco-hoodies.json" />
             }
           />
 
           <Route
             exact
-            path="/detail/:itemId"
-            element={<ItemDetailContainer />}
+            path="remera/:itemId"
+            element={
+              <ItemDetailContainer product="https://pulpoi.github.io/tucostore/src/utils/bd-tuco-remeras.json" />
+            }
+          />
+          <Route
+            exact
+            path="hoodie/:itemId"
+            element={
+              <ItemDetailContainer product="https://pulpoi.github.io/tucostore/src/utils/bd-tuco-hoodies.json" />
+            }
           />
           <Route exact path="cart" element={<Cart />} />
           <Route exact path="checkout" element={<FormBuyer />}></Route>

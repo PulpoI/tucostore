@@ -29,6 +29,8 @@ const ItemDetail = ({ item, descriptionProduct }) => {
     addToCart({ ...item, quantity: quantity });
   };
   const descripcionSticker = "Stickers";
+  const descripcionHoodie =
+    "Todos los Buzos son de algodón peinado con friza y las estampas con Vinilo, Transfer y Poliamida. Utilizamos prendas y materiales de primera calidad para garantizar la durabilidad y comodidad.";
   const descripcionRemera =
     "Todas las Remeras son de algodón peinado 24.1 y las estampas con Vinilo, Transfer y Poliamida. Utilizamos prendas y materiales de primera calidad para garantizar la durabilidad y comodidad.";
 
@@ -39,6 +41,9 @@ const ItemDetail = ({ item, descriptionProduct }) => {
       break;
     case "sticker":
       descriptionProduct = descripcionSticker;
+      break;
+    case "hoodie":
+      descriptionProduct = descripcionHoodie;
       break;
     default:
       break;
@@ -58,7 +63,7 @@ const ItemDetail = ({ item, descriptionProduct }) => {
         <div className="col-6 d-flex row p-3 align-items-start">
           <Link
             className="d-flex justify-content-center"
-            to={`/remeras/${item.category}`}
+            to={`/${item.product}s/${item.category}`}
           >
             <Button className="btn mb-4 btn-warning bg-gradient ">
               Volver{" "}
@@ -72,7 +77,7 @@ const ItemDetail = ({ item, descriptionProduct }) => {
             Categoria:{" "}
             <Link
               style={{ textTransform: "uppercase" }}
-              to={`/remeras/${item.category}`}
+              to={`/${item.product}s/${item.category}`}
             >
               {item.category}
             </Link>{" "}
