@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import "./ItemDetail.css";
 import Footer from "./Footer";
 
-const ItemDetail = ({ item, descriptionProduct }) => {
+const ItemDetail = ({ item, descriptionProduct, displayNone }) => {
   const [goToCart, setGoToCart] = useState(false);
   const [color, setColor] = useState(item.img);
   const { irArriba } = useContext(CartContext);
@@ -28,7 +28,7 @@ const ItemDetail = ({ item, descriptionProduct }) => {
     setGoToCart(true);
     addToCart({ ...item, quantity: quantity });
   };
-  const descripcionSticker = "Stickers";
+  const descripcionSticker = "Stickers de vinilo resistentes al agua.";
   const descripcionHoodie =
     "Todos los Buzos son de algodón peinado con friza y las estampas con Vinilo, Transfer y Poliamida. Utilizamos prendas y materiales de primera calidad para garantizar la durabilidad y comodidad.";
   const descripcionRemera =
@@ -83,7 +83,9 @@ const ItemDetail = ({ item, descriptionProduct }) => {
             </Link>{" "}
           </h5>
           <p>{descriptionProduct}</p>
-          <div className="d-flex flex-column align-content-center align-items-center btn-colors">
+          <div
+            className={`d-flex flex-column align-content-center align-items-center btn-colors ${displayNone}`}
+          >
             <h5 className="text-center">Color:</h5>
             <div>
               <input

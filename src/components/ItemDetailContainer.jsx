@@ -6,7 +6,7 @@ import { db } from "../utils/firebase";
 import Loader from "./Loader";
 import axios from "axios";
 
-function ItemDetailContainer({ product }) {
+function ItemDetailContainer({ product, displayNone }) {
   const { itemId } = useParams();
   const [producto, setProducto] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -44,7 +44,11 @@ function ItemDetailContainer({ product }) {
       ) : (
         <div>
           {" "}
-          <ItemDetail item={producto} descriptionProduct={producto.product} />
+          <ItemDetail
+            item={producto}
+            descriptionProduct={producto.product}
+            displayNone={displayNone}
+          />
         </div>
       )}
     </>

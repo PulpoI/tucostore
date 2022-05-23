@@ -20,7 +20,11 @@ const Item = ({ producto }) => {
       to={`/${producto.product}/${producto.id}`}
     >
       <Card>
-        <Card.Img className="ImgCard" variant="top" src={producto.img} />
+        <Card.Img
+          className={producto.product !== "sticker" ? "ImgCard" : "imgcard"}
+          variant="top"
+          src={producto.img}
+        />
         <Card.Body>
           <Card.Title as={"h6"}>
             {titulo[0]} {titulo[1]} {titulo[2]} {titulo[3]} {titulo[4]}{" "}

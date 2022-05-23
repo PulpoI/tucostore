@@ -14,13 +14,13 @@ const ItemListContainer = ({ producto }) => {
   // ------ bd en JSON --------- //
 
   useEffect(() => {
-    const obtenerProductos = axios(producto).then((res) => res);
     setTimeout(() => {
       setLoading(false);
     }, 300);
+    const obtenerProductos = axios(producto).then((res) => res);
+
     if (!categoria) {
       obtenerProductos.then((res) => setProductos(res.data));
-      setLoading(false);
     } else {
       obtenerProductos.then((res) => {
         setProductos(
@@ -28,7 +28,7 @@ const ItemListContainer = ({ producto }) => {
         );
       });
     }
-  }, [categoria]);
+  }, [productos]);
 
   // ------ bd en FIREBASE --------- //
   // useEffect(() => {

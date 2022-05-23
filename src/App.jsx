@@ -33,6 +33,13 @@ function App() {
               <ItemListContainer producto="https://pulpoi.github.io/tucostore/src/utils/bd-tuco-hoodies.json" />
             }
           />
+          <Route
+            exact
+            path="stickers/:categoria"
+            element={
+              <ItemListContainer producto="https://pulpoi.github.io/tucostore/src/utils/bd-tuco-stickers.json" />
+            }
+          />
 
           <Route
             exact
@@ -46,6 +53,16 @@ function App() {
             path="hoodie/:itemId"
             element={
               <ItemDetailContainer product="https://pulpoi.github.io/tucostore/src/utils/bd-tuco-hoodies.json" />
+            }
+          />
+          <Route
+            exact
+            path="sticker/:itemId"
+            element={
+              <ItemDetailContainer
+                product="https://pulpoi.github.io/tucostore/src/utils/bd-tuco-stickers.json"
+                displayNone="d-none"
+              />
             }
           />
           <Route exact path="cart" element={<Cart />} />

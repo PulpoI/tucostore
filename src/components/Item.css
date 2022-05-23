@@ -3,10 +3,24 @@
   transform: scale(2.8);
   padding-top: 80px;
   }
+
+
+
 .ImgCard{
   object-fit: cover;
   transition: 0.5s;
 }
+
+.imgcard:hover {
+  transform: scale(1.2);
+  padding-top: 15px;
+}
+
+.imgcard {
+  object-fit: cover;
+  transition: 0.5s;
+}
+
   .card {
     overflow: hidden;
   }
