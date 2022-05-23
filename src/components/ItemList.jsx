@@ -56,6 +56,7 @@ const ItemList = ({ productos }) => {
 
   const removeSearch = () => {
     setSearch("");
+    setNumPagina(1);
   };
   useEffect(() => {
     setCurrentPage(0);
@@ -104,7 +105,7 @@ const ItemList = ({ productos }) => {
           </div>
           <div>ANTERIOR</div>
         </Button>
-        <h5>Página {numPagina}</h5>
+        <h5 className="text-center">Página {numPagina}</h5>
         <Button
           className="btn-pag d-flex justify-content-evenly"
           variant="warning"

@@ -5,7 +5,13 @@
     justify-content: center;
   }
   .btn-pag {
-    width: 200px;
+    width: 130px;
     margin-left: 1px;
     margin-right: 1px;
   }
+
+  .form-control:focus{
+    border-color: black !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 235, 58, 0.25) !important;
+}
+

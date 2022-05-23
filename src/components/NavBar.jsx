@@ -17,53 +17,87 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/" className="nav-link active" aria-current="page">
+            <Link to="/" className="nav-link active" aria-current="page">
               Home
-            </Nav.Link>
-            <Nav.Link
-              href="/remeras/tuco"
+            </Link>
+            <Link
+              to="/remeras/tuco"
               className="nav-link active"
               aria-current="page"
             >
               Exclusivos
-            </Nav.Link>
+            </Link>
 
             <NavDropdownMenu
+              href="#"
               className=" active"
               title="Remeras"
               id="collasible-nav-dropdown nav-link"
               aria-current="page"
             >
               <DropdownSubmenu href="#" title="Música">
-                <NavDropdown.Item href="/remeras/musica-argentina">
-                  Música Argentina
+                <NavDropdown.Item href="#">
+                  <Link
+                    className="pt-2 pb-2 subMenu"
+                    to="/remeras/musica-argentina"
+                  >
+                    <p>Música Argentina</p>
+                  </Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/remeras/la renga">
-                  La Renga
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/remeras/la renga">
+                    <p>La Renga</p>
+                  </Link>
                 </NavDropdown.Item>
               </DropdownSubmenu>
               <DropdownSubmenu href="#" title="Series/TV/Películas">
-                <NavDropdown.Item href="/remeras/los-simpsons">
-                  Los Simpsons
+                <NavDropdown.Item href="#">
+                  <Link
+                    className="pt-2 pb-2 subMenu"
+                    to="/remeras/los-simpsons"
+                  >
+                    <p>Los Simpsons</p>
+                  </Link>
                 </NavDropdown.Item>
               </DropdownSubmenu>
               <DropdownSubmenu href="#" title="Deporte">
-                <NavDropdown.Item href="/remeras/diego maradona">
-                  Maradona
+                <NavDropdown.Item href="#">
+                  <Link
+                    className="pt-2 pb-2 subMenu"
+                    to="/remeras/diego maradona"
+                  >
+                    <p>Maradona</p>
+                  </Link>
                 </NavDropdown.Item>
-
-                <NavDropdown.Item href="/remeras/futbol-argentino">
-                  Futbol Argentino
+                <NavDropdown.Item href="#">
+                  <Link
+                    className="pt-2 pb-2 subMenu"
+                    to="/remeras/futbol-argentino"
+                  >
+                    <p>Futbol Argentino</p>
+                  </Link>
                 </NavDropdown.Item>
               </DropdownSubmenu>
               <DropdownSubmenu href="#" title="Otros">
-                <NavDropdown.Item href="/remeras/trasher">
-                  Thrasher
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/remeras/trasher">
+                    <p>Thrasher</p>
+                  </Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/remeras/nasa">Nasa</NavDropdown.Item>
-                <NavDropdown.Item href="/remeras/meme">Memes</NavDropdown.Item>
-                <NavDropdown.Item href="/remeras/tendencia">
-                  Tendencia
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/remeras/nasa">
+                    <p>Nasa</p>
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/remeras/meme">
+                    <p>Memes</p>
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#">
+                  <Link className="pt-2 pb-2 subMenu" to="/remeras/tendencia">
+                    <p>Tendencia</p>
+                  </Link>
                 </NavDropdown.Item>
               </DropdownSubmenu>
             </NavDropdownMenu>

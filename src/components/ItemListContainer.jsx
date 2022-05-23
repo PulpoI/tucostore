@@ -6,21 +6,21 @@ import { db } from "../utils/firebase";
 import Loader from "./Loader";
 import axios from "axios";
 
-const ItemListContainer = () => {
+const ItemListContainer = ({ producto }) => {
   const { categoria } = useParams();
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // ------ bd en JSON --------- //
+
   useEffect(() => {
-    const obtenerProductos = axios(
-      "https://pulpoi.github.io/tucostore/src/utils/bd-tuco-store.json"
-    ).then((res) => res);
+    const obtenerProductos = axios(producto).then((res) => res);
     setTimeout(() => {
       setLoading(false);
     }, 300);
     if (!categoria) {
       obtenerProductos.then((res) => setProductos(res.data));
+      setLoading(false);
     } else {
       obtenerProductos.then((res) => {
         setProductos(
