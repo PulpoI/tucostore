@@ -48,3 +48,8 @@ margin-bottom: 20px;
  .Card:hover {
      color: rgb(54, 54, 54) !important;
  }
+
+ .btn-check:focus+.btn, .btn:focus{
+    border-color: black !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 235, 58, 0.25) !important;
+}

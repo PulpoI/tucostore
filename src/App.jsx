@@ -23,7 +23,9 @@ function App() {
             exact
             path="remeras/:categoria"
             element={
-              <ItemListContainer producto="https://pulpoi.github.io/tucostore/src/utils/bd-tuco-remeras.json" />
+              <ItemListContainer
+                producto={`https://pulpoi.github.io/tucostore/src/utils/bd-tuco-remeras.json`}
+              />
             }
           />
           <Route

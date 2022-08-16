@@ -60,6 +60,7 @@ const ItemList = ({ productos }) => {
   };
   useEffect(() => {
     setCurrentPage(0);
+    setNumPagina(1);
     setLoading(false);
   }, [productos]);
 

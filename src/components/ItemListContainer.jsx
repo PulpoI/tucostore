@@ -9,26 +9,25 @@ import axios from "axios";
 const ItemListContainer = ({ producto }) => {
   const { categoria } = useParams();
   const [productos, setProductos] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   // ------ bd en JSON --------- //
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 300);
     const obtenerProductos = axios(producto).then((res) => res);
 
     if (!categoria) {
       obtenerProductos.then((res) => setProductos(res.data));
+      setLoading(false);
     } else {
       obtenerProductos.then((res) => {
         setProductos(
           res.data.filter((productos) => productos.category === categoria)
         );
+        setLoading(false);
       });
     }
-  }, [productos]);
+  }, [categoria]);
 
   // ------ bd en FIREBASE --------- //
   // useEffect(() => {
